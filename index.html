@@ -292,8 +292,25 @@
         <div class="budget">Рекомендуемый рекламный бюджет — <strong>от 800 € / месяц</strong></div>
       </div>
       <aside class="contact-card">
-        <h3>Получите разбор вашей ниши</h3>
-        <form onsubmit="event.preventDefault(); alert('Спасибо! Подключите обработчик формы перед публикацией лендинга.');">
+        <h3>Получите разбор вашего бизнеса</h3>
+         <input
+    class="contact-field"
+    type="text"
+    name="phone"
+    placeholder="Telegram / WhatsApp"
+    required>
+
+  <button
+    class="contact-submit"
+    type="submit">
+    Оставить заявку
+  </button>
+
+</form>
+
+<div id="formSuccess" style="display:none;">
+  Спасибо! Заявка отправлена ✓
+</div>
           <input class="contact-field" type="text" name="name" placeholder="Ваше имя" required>
           <input class="contact-field" type="text" name="phone" placeholder="Telegram / WhatsApp" required>
           <button class="contact-submit" type="submit">Оставить заявку</button>
@@ -553,5 +570,49 @@
   <div class="container">© 2026 GrowthLegal. Система привлечения и накопления целевой аудитории.</div>
 </footer>
 
+  <script>
+
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxAxuersgCu66c0OZzmIvfQ6V4NxAHLNCHmDu0Ky30MD3csDVdW4l5vKgnwYOk09ChbWg/exec";
+
+const form = document.getElementById("leadForm");
+const success = document.getElementById("formSuccess");
+
+form.addEventListener("submit", async function(event) {
+
+  event.preventDefault();
+
+  const button = form.querySelector("button");
+
+  button.disabled = true;
+  button.textContent = "Отправляем...";
+
+  const data = {
+    name: form.name.value,
+    phone: form.phone.value
+  };
+
+  try {
+
+    await fetch(GOOGLE_SCRIPT_URL, {
+      method: "POST",
+      body: JSON.stringify(data)
+    });
+
+    form.reset();
+    form.style.display = "none";
+    success.style.display = "block";
+
+  } catch (error) {
+
+    alert("Не удалось отправить заявку. Попробуйте ещё раз.");
+
+    button.disabled = false;
+    button.textContent = "Оставить заявку";
+
+  }
+
+});
+
+</script>
 </body>
 </html>
