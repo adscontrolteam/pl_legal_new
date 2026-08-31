@@ -260,7 +260,151 @@
       from{transform:translateX(0)}
       to{transform:translateX(calc(-50% - 11px))}
     }
+/* RESULT SECTION */
 
+.result-section {
+  background: #f4f1ea;
+  color: #191919;
+  padding: 100px 0;
+}
+
+.result-header {
+  max-width: 850px;
+  margin-bottom: 45px;
+}
+
+.result-header h2 {
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+.result-header p {
+  font-size: 18px;
+  color: #6d6962;
+  max-width: 760px;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.result-box {
+  background: #ffffff;
+  border: 1px solid #e6dfd2;
+  border-radius: 22px;
+  padding: 34px;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 390px;
+}
+
+.result-box-accent {
+  background: #101214;
+  color: #ffffff;
+  border-color: rgba(217, 164, 59, 0.35);
+}
+
+.result-number {
+  color: #d9a43b;
+  font-size: 54px;
+  font-weight: 900;
+  line-height: 1;
+
+  margin-bottom: 28px;
+}
+
+.result-box h3 {
+  font-size: 30px;
+  margin-bottom: 18px;
+}
+
+.result-box p {
+  font-size: 17px;
+  color: #65615a;
+}
+
+.result-box-accent p {
+  color: #bdb7ad;
+}
+
+.result-bottom {
+  margin-top: auto;
+  padding-top: 25px;
+
+  border-top: 1px solid #ece5d9;
+
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.result-box-accent .result-bottom {
+  border-color: rgba(255,255,255,0.1);
+  color: #f0c86e;
+}
+
+
+/* FINAL RESULT MESSAGE */
+
+.result-message {
+  margin-top: 24px;
+
+  background: #101214;
+  color: #ffffff;
+
+  border-radius: 22px;
+
+  padding: 30px 34px;
+
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 25px;
+
+  align-items: center;
+}
+
+.result-message span {
+  color: #d9a43b;
+
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.result-message strong {
+  font-size: 21px;
+  line-height: 1.4;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .result-section {
+    padding: 65px 0;
+  }
+
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .result-box {
+    min-height: auto;
+  }
+
+  .result-message {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+}
+    
   </style>
 </head>
 <body>
@@ -522,6 +666,88 @@
 </section>
 
 <section class="final">
+  <section class="result-section">
+  <div class="container">
+
+    <div class="result-header">
+      <div class="eyebrow">Результат</div>
+
+      <h2>
+        В результате вы получаете
+        <span class="gold">не только заявки</span>
+      </h2>
+
+      <p>
+        Мы строим систему, которая одновременно приносит клиентов сегодня
+        и создаёт маркетинговый актив вашего бизнеса на будущее.
+      </p>
+    </div>
+
+    <div class="result-grid">
+
+      <!-- Результат 1 -->
+      <div class="result-box">
+
+        <div class="result-number">01</div>
+
+        <h3>Поток актуальных заявок</h3>
+
+        <p>
+          Привлекаем людей, у которых уже есть актуальный запрос
+          на услуги легализации и которые находятся в процессе
+          выбора компании.
+        </p>
+
+        <div class="result-bottom">
+          Заявки → консультации → клиенты
+        </div>
+
+      </div>
+
+
+      <!-- Результат 2 -->
+      <div class="result-box result-box-accent">
+
+        <div class="result-number">02</div>
+
+        <h3>
+          Капитализация вашего бизнеса
+        </h3>
+
+        <p>
+          Параллельно вы создаёте собственный Instagram-аккаунт
+          с накопленной базой целевой аудитории, которая уже знает
+          вашу компанию и взаимодействует с вашим контентом.
+        </p>
+
+        <p>
+          Этой аудитории можно в дальнейшем продавать и допродавать
+          другие услуги и продукты без необходимости каждый раз
+          заново покупать её внимание.
+        </p>
+
+        <div class="result-bottom">
+          Аудитория → доверие → повторные продажи → новые продукты
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="result-message">
+
+      <span>Именно поэтому</span>
+
+      <strong>
+        часть рекламного бюджета приносит результат сегодня,
+        а часть превращается в актив, который остаётся внутри бизнеса.
+      </strong>
+
+    </div>
+
+  </div>
+</section>
+  
   <div class="container final-grid">
     <div>
       <div class="eyebrow">Капитализация</div>
